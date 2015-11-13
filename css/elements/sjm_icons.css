@@ -1,0 +1,391 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+** Иконки
+
+* Основное                      /.sjm_icon
+* Замок                         /.m_lock.sjm_icon
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Основное                    /.sjm_icon ]
+*/
+.sjm_icon {
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: inline;
+    }
+}
+
+/*------------------------------------------------------------------
+[ * Замок                       /.m_lock.sjm_icons ]
+*/
+.sjm_icon {
+    &.m_lock {
+        background-image: inline('../../assets/img/lock.svg');
+        height: 58px;
+        width: 45px;
+    }
+
+    &.m_lock_42x51 {
+        background-image: inline('../../assets/img/lock-42x51.svg');
+        height: 51px;
+        width: 42px;
+    }
+
+    &.m_back_arrow {
+        background-image: inline('../../assets/img/back-arrow.svg');
+        height: 16px;
+        width: 16px;
+    }
+
+    &.m_back_arrow_blue_16x16 {
+        background-image: inline('../../assets/img/back-arrow-blue-16x16.svg');
+        height: 16px;
+        width: 16px;
+    }
+
+    &.m_logo_home {
+        background-image: inline('../../assets/img/logo/logo-home.svg');
+        height: 32px;
+        width: 117px;
+    }
+
+    &.m_logo_header {
+        background-image: inline('../../assets/img/logo/logo-home.svg');
+        background-size: cover;
+        height: 25px;
+        text-decoration: none;
+        width: 95px;
+    }
+
+
+
+    &.m_search_white {
+        background-image: inline('../../assets/img/search-white.svg');
+        height: 18px;
+        width: 19px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+        }
+    }
+
+    &.m_search_gray {
+        background-image: inline('../../assets/img/search-gray.svg');
+        height: 18px;
+        width: 19px;
+
+        &::after {
+            content: '';
+            display: inline-block;
+        }
+    }
+
+    &.m_app_applicant_48x48 {
+        background-image: inline('../../assets/img/apps/applicant-48x48.svg');
+        height: 48px;
+        width: 48px;
+    }
+
+    &.m_app_applicant_win_phone_48x48 {
+        background-image: inline('../../assets/img/apps/applicant-win-phone-48x48.svg');
+        height: 48px;
+        width: 48px;
+    }
+
+    &.m_app_hr_48x48 {
+        background-image: inline('../../assets/img/apps/hr-48x48.svg');
+        height: 48px;
+        width: 48px;
+    }
+
+    &.m_app_calendar_48x48 {
+        background-image: inline('../../assets/img/apps/calendar-48x48.png');
+        height: 48px;
+        width: 48px;
+    }
+
+    &.m_bars {
+        background-image: inline('../../assets/img/bars.svg');
+        height: 14px;
+        width: 20px;
+    }
+
+    &.m_login {
+        background-image: inline('../../assets/img/login.svg');
+        height: 22px;
+        width: 22px;
+    }
+
+    &.m_close_white {
+        background-image: inline('../../assets/img/close-white.svg');
+        height: 16px;
+        width: 16px;
+    }
+
+    &.m_close_small {
+        background-image: inline('../../assets/img/close-small.svg');
+        height: 12px;
+        width: 12px;
+    }
+
+    &.m_eye_close {
+        background-image: inline('../../assets/img/eye-close.svg');
+        height: 22px;
+        width: 25px;
+    }
+
+    &.m_eye_open {
+        background-image: inline('../../assets/img/eye-open.svg');
+        height: 16px;
+        width: 22px;
+    }
+
+    &.m_avatar_default {
+        background-image: inline('../../assets/img/avatar-default.svg');
+        height: 36px;
+        width: 36px;
+    }
+
+    &.m_binoculars {
+        background-image: inline('../../assets/img/binoculars.svg');
+        height: 59px;
+        width: 65px;
+    }
+
+    &.m_cross_gray_10x10 {
+        background-image: inline('../../assets/img/icons/cross-gray-10x10.svg');
+        height: 9px;
+        width: 10px;
+    }
+
+    &.m_cross_gray_22x22 {
+        background-image: inline('../../assets/img/cross-gray-22x22.svg');
+        height: 22px;
+        width: 22px;
+    }
+
+    &.m_archive_24x24 {
+        background-image: inline('../../assets/img/archive-24x24.svg');
+        background-position: center center;
+        height: 24px;
+        width: 24px;
+    }
+
+    &.m_left_chevrone {
+        background-image: inline('../../assets/img/left-chevrone.svg');
+        background-position: center center;
+        height: 10px;
+        width: 7px;
+    }
+
+    &.m_right_chevrone {
+        background-image: inline('../../assets/img/right-chevrone.svg');
+        background-position: center center;
+        height: 10px;
+        width: 7px;
+    }
+
+    &.m_pencil_blue {
+        background-image: inline('../../assets/img/pencil-blue.svg');
+        background-position: center center;
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_minus_square_gray_18x18 {
+        background: $color-gray-dark;
+        border-radius: $border-radius;
+        height: 18px;
+        width: 18px;
+
+        &::after {
+            background: $color-white;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+        }
+    }
+
+    &.m_plus_square_blue_18x18 {
+        background-image: inline('../../assets/img/icons/plus-square-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_briefcase {
+        background-image: inline('../../assets/img/briefcase.svg');
+        height: 57px;
+        width: 72px;
+    }
+
+    &.m_warning_orange_sign {
+        background-image: inline('../../assets/img/warning-orange-sign.svg');
+        height: 19px;
+        width: 23px;
+    }
+
+    &.m_paperplane {
+        background-image: inline('../../assets/img/paperplane.svg');
+        height: 18px;
+        width: 21px;
+    }
+
+    &.m_mail_blue_18x18 {
+        background-image: inline('../../assets/img/icons/mail-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_mail_blue_33x33 {
+        background-image: inline('../../assets/img/icons/mail-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_phone_blue_18x18 {
+        background-image: inline('../../assets/img/icons/phone-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_fb_blue_18x18 {
+        background-image: inline('../../assets/img/icons/fb-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_fb_origin_33x33 {
+        background-image: inline('../../assets/img/icons/fb-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_gp_blue_18x18 {
+        background-image: inline('../../assets/img/icons/gp-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_gp_origin_33x33 {
+        background-image: inline('../../assets/img/icons/gp-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_git_blue_18x18 {
+        background-image: inline('../../assets/img/icons/git-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_ln_blue_18x18 {
+        background-image: inline('../../assets/img/icons/ln-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+
+    &.m_ok_blue_18x18 {
+        background-image: inline('../../assets/img/icons/ok-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_ok_origin_33x33 {
+        background-image: inline('../../assets/img/icons/ok-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_tw_blue_18x18 {
+        background-image: inline('../../assets/img/icons/tw-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_tw_origin_33x33 {
+        background-image: inline('../../assets/img/icons/tw-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_vk_blue_18x18 {
+        background-image: inline('../../assets/img/icons/vk-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_vk_origin_33x33 {
+        background-image: inline('../../assets/img/icons/vk-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_wa_origin_33x33 {
+        background-image: inline('../../assets/img/icons/wa-origin-33x33.svg');
+        height: 33px;
+        width: 33px;
+    }
+
+    &.m_web_blue_18x18 {
+        background-image: inline('../../assets/img/icons/web-blue-18x18.svg');
+        height: 18px;
+        width: 18px;
+    }
+
+    &.m_resume_control_check {
+        background-image: inline('../../assets/img/resume-control-check.svg');
+        height: 24px;
+        width: 33px;
+    }
+
+    &.m_resume_control_clock {
+        background-image: inline('../../assets/img/resume-control-clock.svg');
+        height: 25px;
+        width: 25px;
+    }
+
+    &.m_resume_control_cancel {
+        background-image: inline('../../assets/img/resume-control-cancel.svg');
+        height: 23px;
+        width: 23px;
+    }
+
+    &.m_star_gray_20x18 {
+        background-image: inline('../../assets/img/star-gray-20x18.svg');
+        height: 18px;
+        width: 20px;
+    }
+
+    &.m_star_yellow_20x18 {
+        background-image: inline('../../assets/img/star-yellow-20x18.svg');
+        height: 18px;
+        width: 20px;
+    }
+
+    &.m_save_56_56 {
+        background-image: inline('../../assets/img/save-56-56.svg');
+        height: 56px;
+        width: 56px;
+    }
+
+    &.m_triangle_down_gray_9x6 {
+        background-image: inline('../../assets/img/triangle-down-gray-9x6.svg');
+        height: 6px;
+        width: 9px;
+    }
+}

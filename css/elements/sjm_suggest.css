@@ -1,0 +1,136 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Саджест
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Саджест ]
+*/
+.sjm_suggest {
+    background-color: $color-white;
+    display: block;
+    height: 100%;
+    margin: 0;
+    padding: 90px 0 0;
+    position: relative;
+    width: 100%;
+
+    &.m_apply_button {
+        padding-bottom: 36px;
+    }
+}
+
+.sjm_suggest:before {
+    background-color: $color-white;
+    content: '';
+    height: 90px;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.sjm_suggest_back {
+    background-color: $color-white;
+    color: $color-blue;
+    display: block;
+    left: 0;
+    line-height: 16px;
+    padding: 18px 12px 5px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.sjm_suggest_search {
+    background-color: $color-white;
+    display: block;
+    left: 12px;
+    position: fixed;
+    right: 12px;
+    top: 50px;
+    z-index: 2;
+}
+
+.sjm_suggest_search_submit {
+    margin-left: 12px;
+    width: 66px;
+}
+
+.sjm_suggest_loader {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    z-index: 10;
+}
+
+.sjm_suggest_list {
+    display: block;
+    padding: 3px 12px 0;
+}
+
+.sjm_suggest_total_selection {
+    background-color: $color-background;
+    border-bottom: $color-gray solid 1px;
+    border-top: $color-gray solid 1px;
+    color: $color-gray-dark;
+    left: 0;
+    margin: 6px 0 0;
+    padding: 9px 30px 9px 12px;
+    position: relative;
+    right: 0;
+
+    &.m_has_selection {
+        color: $color-blue;
+    }
+
+    &.m_has_selection:after {
+        background: inline($select-caret-svg) right center no-repeat;
+        content: '';
+        display: block;
+        height: 5px;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 10px;
+    }
+
+    &.m_selection_active:after {
+        transform: scaleY(-2px);
+    }
+}
+
+.sjm_suggest_list_item {
+    border-bottom: $color-gray solid 1px;
+    font-size: $font-size;
+    line-height: $line-height;
+    padding: 14px 12px 14px 0;
+
+}
+
+.sjm_suggest_list_item_with_filter {
+    color: $color-gray-dark;
+}
+
+.sjm_suggest_list_item_match {
+    color: $color-black;
+}
+
+.sjm_suggest_nothing {
+    color: $color-gray-dark;
+    display: block;
+    font-size: 18px;
+    left: 0;
+    list-style: 26px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}

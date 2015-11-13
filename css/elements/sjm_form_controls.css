@@ -1,0 +1,159 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Основное
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+
+/*------------------------------------------------------------------
+[ * Основное ]
+*/
+
+/* Общие контролы формы
+
+    Сброс стилей и их подгонка для всех контролов формы
+    Для следующих контролов и инпутов надо использовать класс .sjm_form_control
+
+    select
+    textarea
+    input[type="text"]
+    input[type="password"]
+    input[type="datetime"]
+    input[type="datetime-local"]
+    input[type="date"]
+    input[type="month"]
+    input[type="time"]
+    input[type="week"]
+    input[type="number"]
+    input[type="email"]
+    input[type="url"]
+    input[type="search"]
+    input[type="tel"]
+    input[type="color"]
+*/
+
+.sjm_form_control {
+    @include form-control-focus($color-blue);
+    @include placeholder(transparent);
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: inset $color-gray 0 -1px 0;
+    color: $color-black;
+    display: block;
+    font-size: $font-size;
+    font-weight: normal;
+    height: 26px;
+    line-height: $line-height;
+    outline: none;
+    padding: 0 0 4px;
+    text-size-adjust: 100%;
+    transition: box-shadow ease-in-out .15s;
+    user-select: text;
+    width: 100%;
+
+    /* МОДИФИКАТОРЫ */
+
+    /* ДИСПЛЭЙ - Инлайн */
+    &.m_inline {
+        display: inline-block;
+        float: left;
+    }
+
+    /* ГРАНИЦЫ - Без границы */
+    &.m_without_border {
+        box-shadow: none;
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    /* Отступы - Без паддинга */
+    &.m_without_padding {
+        padding: 0;
+    }
+
+    /* РАЗМЕР - Большой */
+    &.m_large {
+        font-size: 18px;
+        height: auto;
+        line-height: 29px;
+        padding: 0 0 9px;
+    }
+
+    /* СОСТОЯНИЕ - Фокус */
+    &.m_focus {
+        box-shadow: inset $color-blue 0 -2px 0;
+    }
+
+    /* СТАТУС - Ошибка */
+    &.m_error {
+        box-shadow: inset $color-red 0 -1px 0;
+        transition: box-shadow ease-in-out .15s;
+    }
+
+    /* ВРЕМЕННЫЙ ХАК - Для плэйсхолдеров */
+    &.m_with_placeholder {
+        @include placeholder($color-gray-dark);
+    }
+
+    /* СЕЛЕКТ */
+    select& {
+        -webkit-appearance: none;
+        background: inline($select-caret-svg) right center no-repeat;
+        border-radius: 0;
+        overflow: visible;
+        padding-right: 15px;
+
+        &:focus {
+            background: inline($select-caret-svg-blue) right center no-repeat;
+        }
+    }
+
+    /* ТЕКСТАРЕА */
+    textarea& {
+        min-height: 150px;
+        resize: none;
+    }
+
+    /* ТЕКСТАРЕА - Однострочная с аУтосайзом */
+    textarea.m_autosize& {
+        min-height: 0;
+        overflow: hidden;
+    }
+}
+
+/* Дизаблим инпуты */
+.sjm_form_control[disabled],
+.sjm_form_control[readonly],
+fieldset .sjm_form_control[disabled] {
+    background-color: transparent;
+    opacity: 1;
+}
+
+.sjm_form_control[disabled],
+fieldset .sjm_form_control[disabled] {
+    cursor: not-allowed;
+}
+
+.sjm_form_control_fake_ph {
+    bottom: 0;
+    color: $color-gray-dark;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.m_large {
+        font-size: 18px;
+        height: auto;
+        line-height: 29px;
+    }
+}

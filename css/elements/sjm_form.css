@@ -1,0 +1,306 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+- Основное                      /.sjm_form
+- Поле формы                    /.sjm_form_field
+- Лэйбл поля                    /.sjm_form_label
+- Заголовок лэйбла              /.sjm_form_label_title
+- Описание лэйбла               /.sjm_form_label_desc
+- Хелпер для лэйбла             /.sjm_form_label_helper
+- Оболочка для контролов        /.sjm_form_control_wr
+- Набор групп контролов         /.sjm_form_control_set
+- Группа для контролов          /.sjm_form_control_group
+- Место вставки контрола в группе   /.sjm_form_control_placegolder
+- Контрол                       /.sjm_form_control
+- Сообщение в поле              /.sjm_form_message
+-------------------------------------------------------------------*/
+
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+
+/*------------------------------------------------------------------
+[Основное                   /.sjm_form]
+*/
+.sjm_form {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+/*------------------------------------------------------------------
+[Поле формы                 /.sjm_form_field]
+*/
+.sjm_form_field {
+    @include clearfix;
+    display: block;
+    margin: 0 0 18px;
+    position: relative;
+    width: 100%;
+
+    &:last-child {
+        margin: 0;
+    }
+
+    &.m_without_margin {
+        margin: 0;
+    }
+}
+
+/*------------------------------------------------------------------
+[Лэйбл поля                 /.sjm_form_label]
+*/
+.sjm_form_label {
+    @include font($font-size-small, medium);
+    color: $color-gray-dark;
+    display: block;
+    height: 100%;
+    line-height: $line-height;
+    margin: 0 0 2px;
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+    transition: opacity .15s ease-in-out, transform .15s ease-in-out, font-size .15s ease-in-out;
+    width: 100%;
+
+    /* МОДИФИКАТОРЫ */
+
+    /* СОСТОЯНИЕ - Показываем */
+    &.m_hide {
+        font-size: $font-size;
+        opacity: 1;
+        pointer-events: none;
+        transform: translateY(25px);
+
+    }
+
+}
+
+/*------------------------------------------------------------------
+[ Оболочка для контролов        /.sjm_form_control_wr ]
+*/
+.sjm_form_control_wr {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+/*------------------------------------------------------------------
+[ Набор групп контролов         /.sjm_form_control_set ]
+*/
+.sjm_form_control_set {
+    @include clearfix;
+    display: block;
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ: Сеты друг за другом отбиваем сверху */
+    & + & {
+        margin: 12px 0 0;
+    }
+}
+
+
+/* ------------------------------------------------------------------
+    .sjm_form_set
+
+    Набор классов для размещения нескольких контролов в одну строку
+
+    Пример:
+    - поле возраст;
+    - поле языки;
+    - поле доход;
+
+    Разметка:
+    <div class="sjm_form_set">
+        <div class="sjm_form_set_item">
+            <control1 />
+        </div>
+        <div class="sjm_form_set_item">
+            <control2 />
+        </div>
+    </div>
+*/
+
+.sjm_form_set {
+    display: flex;
+
+    &_item {
+        flex: 1 1 auto;
+
+        & + & {
+            margin-left: 12px;
+        }
+
+    }
+}
+
+
+/* ------------------------------------------------------------------
+    .sjm_form_row_set
+
+    Набор классов для поля, состоящего из набора полей
+
+    Пример:
+    - поле языки;
+
+    Разметка:
+    <div class="sjm_form_row_set">
+        <div class="sjm_form_row_set_item">
+            <FieldSet1 />
+            <span class="sjm_form_row_set_remove">
+                <span class="sj_icon m_btn_minus">
+            </span>
+        </div>
+        <div class="sjm_form_row_set_item">
+            <FieldSet2 />
+            <span class="sjm_form_row_set_remove">
+                <span class="sj_icon m_btn_minus"></span>
+            </span>
+        </div>
+    </div>
+
+    Классы:
+    * sjm_form_row_set         родительский контейнер;
+    * sjm_form_row_set_item    блок, содержаший поле или набор полей;
+    - sjm_form_row_set_add     вешается на кнопку добавления поля или набора полей, необходим для правильных отступов
+    - sjm_form_row_set_remove  используется вместе с дочерним элементом <span class="sj_icon m_btn_minus"></span>
+                                    для реализации удаления одной из строк
+*/
+
+.sjm_form_row_set {
+    &_item {
+        margin-bottom: 12px;
+    }
+
+    &_add {
+        margin-top: 6px;
+        padding-right: 20px;
+        position: relative; /* для иконки sjm_form_btn_add_icon внутри */
+        text-align: left;
+
+        &_icon {
+            height: 18px;
+            position: absolute;
+            right: 9px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &_item + &_add {
+        margin-top: 12px;
+    }
+
+    &_remove {
+        padding-top: 4px;
+    }
+}
+
+
+/*------------------------------------------------------------------
+[ Группа для контролов      /.sjm_form_control_group ]
+*/
+.sjm_form_control_group {
+
+    margin: 0;
+
+    &:first-child {
+        margin: 0;
+    }
+
+    /* МОДИФИКАТОРЫ */
+
+    /* ОТСТУПЫ - Паддинги */
+    &.m_left_padding {
+        padding-left: 9px;
+    }
+
+    &.m_right_padding {
+        padding-right: 9px;
+    }
+
+    &.m_both_padding {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+}
+
+
+
+/*------------------------------------------------------------------
+[ Место вставки контрола в группе   /.sjm_form_control_placeholder ]
+*/
+.sjm_form_control_placeholder {
+    display: inline-block;
+    width: auto;
+}
+
+/*------------------------------------------------------------------
+[ Сообщение в поле          /.sjm_form_message ]
+*/
+.sjm_form_message {
+    color: $color-gray-dark;
+    display: block;
+    font-size: $font-size-small;
+    line-height: 16px;
+    padding: 6px 0 0;
+
+    /* МОДИФИКАТОРЫ */
+
+    /* СТАТУС - Ошибка */
+    &.m_error {
+        color: $color-red;
+    }
+
+}
+
+
+/* ------------------------------------------------------------------
+    .sjm_form_choice
+
+    Набор классов для вывода списка выбранных значений поля
+
+    Примеры:
+    - поле метро;
+    - поле специализация;
+
+    Разметка:
+    <div className="sjm_form_choice">
+        Текст выбранного значения
+
+        <span className="sjm_form_choice_remove">
+            <span className="sjm_icon m_cross_gray_10x10" />
+        </span>
+    </div>
+
+    Классы:
+    * sjm_form_choice           родительский контейнер;
+    * sjm_form_choice_remove    иконка удаления значения;
+*/
+
+.sjm_form_choice {
+    border: 1px solid $color-gray;
+    border-radius: $border-radius;
+    padding: 7px 40px 9px 12px;
+    position: relative;
+
+    & + & {
+        margin-top: 6px;
+    }
+
+    &_remove {
+        font-size: 0;
+        height: 10px;
+        line-height: 1;
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+
+
+
+

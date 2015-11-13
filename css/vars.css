@@ -1,0 +1,175 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Основное/скафолдинг
+* Типографика
+* Лэйаут
+* Панель
+* Форма
+* Контролы
+* Дропдаун
+* Редактируемый элемент
+* Кнопки
+* Модал
+* Комбо-лист
+* Супер-минус
+* Тэги
+* Социальные кнопки
+* Алерт
+* Саджесты
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[ * Основное/скафолдинг ]
+*/
+$color-background: 				#f2f2f2;
+
+$color-black:                   #000;
+$color-blue: 					#007efc;
+$color-blue-light:				#d9ecff;
+$color-gray-dark:               #6e6e6e;
+$color-gray:                    #d8d8d8;
+$color-green:                   #22c431;
+$color-orange:					#ff5e00;
+$color-red: 					#fa6464;
+$color-white:                   #fff;
+$color-yellow:                  #fae664;
+$color-yellow-light:			#fefcdd;
+$color-violet:					#56128e;
+
+$color-facebook:				#385184;
+$color-vkontakte:				#4a6c92;
+$color-mailru:					#168de2;
+$color-linkedin:				#006087;
+
+$border-radius:					3px;
+
+/*------------------------------------------------------------------
+[ * Типографика ]
+*/
+$font-size:		                18px;
+$line-height:   		        22px;
+
+$font-size-xsmall:              13px;
+$line-height-xsmall:            15px;
+
+$font-size-small:               16px;
+$line-height-small:             18px;
+
+$font-size-large:               24px;
+$line-height-large:             32px;
+
+$font-size-h1:                  28px;
+$line-height-h1:                34px;
+
+$font-size-h2:                  24px;
+$line-height-h2:                normal;
+
+$font-size-h3:                  22px;
+$line-height-h3:                normal;
+
+$font-size-h4:                  16px;
+$line-height-h4:                normal;
+
+/*------------------------------------------------------------------
+[ * Лэйаут ]
+*/
+$layout-header-height:          49px;
+
+$layout-header-border-color:    #d3d3d3;
+
+$layout-content-single-width:   708px;
+
+/*------------------------------------------------------------------
+[ * Форма ]
+*/
+$form-label-width:              216px;
+$form-control-wrapper-width:    348px;
+
+$form-label-font-size:          15px;
+$form-label-line-height:        20px;
+$form-label-color:              #000;
+
+$form-label-desc-font-size:     13px;
+$form-label-desc-line-height:   18px;
+$form-label-desc-color:         #969696;
+
+$form-label-helper-svg:             '../../assets/img/helper.svg';
+$form-label-helper-png:             '../../assets/img/helper.png';
+$form-label-helper-higlight-svg:    '../../assets/img/helper-blue.svg';
+$form-label-helper-higlight-png:    '../../assets/img/helper-blue.png';
+
+$form-message-font-size:        13px;
+$form-message-line-height:      16px;
+$form-message-padding-top:      6px;
+$form-message-color:            #969696;
+$form-message-color-error:      #fa6464;
+
+/* Мобила */
+$m-form-label-font-size:        13px;
+$m-form-label-line-height:      16px;
+$m-form-label-color:            #9696a3;
+$m-form-label-padding-vertical: 3px;
+
+
+$m-form-message-padding-top:    3px;
+
+
+/*------------------------------------------------------------------
+[ * Контролы ]
+*/
+
+/* Селект */
+$select-caret-svg:              '../../assets/img/select-caret.svg';
+$select-caret-svg-blue:         '../../assets/img/select-caret-blue.svg';
+$select-caret-png:              '../../assets/img/select-caret.png';
+$select-caret-png-blue:         '../../assets/img/select-caret-blue.png';
+
+/* Чекбокc */
+$checkbox-ok-svg:               '../../assets/img/ok.svg';
+$checkbox-ok-png:               '../../assets/img/ok.png';
+
+
+/*------------------------------------------------------------------
+[ * Редактируемый элемент ]
+*/
+$editable-block-icon-pencil-svg:            '../../assets/img/pencil.svg';
+$editable-block-icon-pencil-png:            '../../assets/img/pencil.png';
+$editable-block-icon-pencil-higlight-svg:   '../../assets/img/pencil-blue.svg';
+$editable-block-icon-pencil-higlight-png:   '../../assets/img/pencil-blue.png';
+
+/*------------------------------------------------------------------
+[ * Комбо-лист ]
+*/
+
+$combo-list-caret-svg:          '../../assets/img/select-caret.svg';
+$combo-list-caret-png:          '../../assets/img/select-caret-blue.png';
+$combo-list-caret-highlight-svg:'../../assets/img/select-caret.svg';
+$combo-list-caret-highlight-png:'../../assets/img/select-caret-blue.png';
+
+/*------------------------------------------------------------------
+[ * Социальные кнопки ]
+*/
+
+$social-btn-facebook-bg-svg:	'../../assets/img/social/social-facebook.svg';
+$social-btn-vkontakte-bg-svg:	'../../assets/img/social/social-vkontakte.svg';
+$social-btn-mailru-bg-svg:		'../../assets/img/social/social-mailru.svg';
+$social-btn-linkedin-bg-svg:	'../../assets/img/social/social-linkedin.svg';
+
+$social-btn-facebook-bg-png:	'../../assets/img/social/social-facebook.png';
+$social-btn-vkontakte-bg-png:	'../../assets/img/social/social-vkontakte.png';
+$social-btn-mailru-bg-png:		'../../assets/img/social/social-mailru.png';
+$social-btn-linkedin-bg-png:	'../../assets/img/social/social-linkedin.png';
+
+/*------------------------------------------------------------------
+[ * Тост ]
+*/
+$toast-light-close:				'../../assets/img/toast-close-light.svg';
+$toast-dark-close:				'../../assets/img/toast-close-dark.svg';
+
+/*------------------------------------------------------------------
+[ * Саджесты ]
+*/
+$suggest-search-bg-svg:             '../../assets/img/search.svg';
+$suggest-search-bg-png:              '../../assets/img/search.svg';
+

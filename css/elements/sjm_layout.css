@@ -1,0 +1,121 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Основной враппер /.sj_layout_wrapper
+* Хедер /.sj_layout_header
+* Контент /.sj_layout_content
+* Колонки /.sj_layout_column
+* Футер /.sj_layout_footer
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/fonts.css';
+
+
+/*------------------------------------------------------------------
+[1. Основной враппер /.sj_layout_wrapper]
+*/
+.sjm_layout {
+    -webkit-overflow-scrolling: touch;
+}
+
+.sjm_layout_wrapper {
+    height: 100%;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+    width: 100%;
+}
+
+.sjm_layout_content_wrapper {
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+/*------------------------------------------------------------------
+[2. Хедер /.sj_layout_header]
+*/
+.sjm_layout_header {
+    background: $color-white;
+    height: 49px;
+    margin: 0 auto;
+    padding: 0 12px;
+    position: relative;
+    text-align: center;
+
+    &.m_with_border {
+        border-bottom: $color-gray solid 1px;
+    }
+
+    &.m_auto_height {
+        height: auto;
+        min-height: 49px;
+    }
+
+    &.m_fixed {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.sjm_layout_header_logo {
+    background-size: cover;
+    display: block;
+    height: 25px;
+    margin: 0 auto;
+    transform: translateY(50%);
+    width: 95px;
+}
+
+.sjm_layout_header_menu,
+.sjm_layout_header_profile {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.sjm_layout_header_menu {
+    background: none;
+    border: 0;
+    left: 9px;
+    opacity: 1;
+    outline: none;
+    padding: 7px;
+
+    &.m_loading {
+        animation: blink .2s steps(5, start) infinite;
+    }
+}
+
+.sjm_layout_header_profile {
+    outline: none;
+    padding: 7px;
+    right: 9px;
+}
+
+.sjm_layout_header_plug {
+    height: 49px;
+    width: 100%;
+}
+
+
+/*------------------------------------------------------------------
+[3. Контент /.sj_layout_content]
+*/
+.sjm_layout_content {
+    margin: 0 auto;
+    max-width: 600px;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    padding: 0 12px 18px;
+    position: relative;
+}
+
+@keyframes blink {
+    to {
+        opacity: .5;
+    }
+}

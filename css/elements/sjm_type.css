@@ -1,0 +1,230 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+0. Базовый текст
+1. Заголовки
+2. Параграфы
+3. Всякие миксы: выравнивания, цвета и тд
+4. Заголовок страницы
+5. Списки
+6. Остальное
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[0. Базовый текст ]
+*/
+.sjm_type_base {
+    color: $color-black;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+/*------------------------------------------------------------------
+[1. Заголовки]
+*/
+
+h1,
+.sjm_type_h1 {
+    @include font($font-size-h1, light);
+    color: $color-black;
+    font-weight: normal;
+    line-height: $line-height-h1;
+    margin: 18px 0;
+
+    &.m_extended {
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+
+h2,
+.sjm_type_h2 {
+    @include font($font-size-h2, light);
+    color: $color-black;
+    font-weight: normal;
+    line-height: $line-height-h2;
+    margin: 12px 0 18px;
+
+    &.m_extended {
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+
+h3,
+.sjm_type_h3 {
+    @include font($font-size-h3, light);
+    color: $color-black;
+    font-weight: normal;
+    line-height: $line-height-h3;
+    margin: 6px 0 12px;
+}
+
+h4,
+.sjm_type_h4 {
+    @include font($font-size-h4, light);
+    color: $color-black;
+    font-weight: normal;
+    line-height: $line-height-h4;
+    margin: 6px 0 12px;
+}
+
+/*------------------------------------------------------------------
+[2. Параграфы]
+*/
+
+.sjm_type_p {
+    &.m_light {
+        color: $color-gray-dark;
+        font-size: $font-size;
+        line-height: $line-height;
+    }
+}
+
+/*------------------------------------------------------------------
+[4. Заголовок страницы]
+*/
+.sjm_page_header {
+    @include font($font-size-h1, light);
+    color: $color-black;
+    line-height: $line-height-h1;
+    margin: 18px 0 24px;
+    padding-bottom: 0;
+
+}
+
+.sjm_page_header_style {
+    margin: 18px 0 24px;
+}
+
+
+/*------------------------------------------------------------------
+[5. Списки]
+*/
+
+ol,
+ul {
+    margin: 0;
+    padding: 0 0 0 18px;
+}
+
+.sjm_ordered_list,
+.sjm_ordered_list ol {
+    counter-reset: item;
+    padding: 0;
+
+    li {
+        display: block;
+        padding: 0 0 0 20px;
+        position: relative;
+    }
+
+    li:before {
+        content: counters(item, '.') '. ';
+        counter-increment: item;
+        display: inline-block;
+        left: -1px;
+        position: absolute;
+        top: 1px;
+    }
+
+    &.m_level2 {
+        li:before {
+            left: -15px;
+            top: 0;
+        }
+
+        li {
+            padding: 0 0 0 18px;
+        }
+
+    }
+
+    &.m_level3 {
+        li:before {
+            left: -15px;
+            top: 0;
+        }
+
+        li {
+            padding: 0 0 0 30px;
+        }
+
+    }
+
+    a {
+        word-break: break-all;
+    }
+}
+
+/*------------------------------------------------------------------
+[6. Остальное
+*/
+.sj_text {
+    color: $color-black;
+    display: inline-block;
+    text-decoration: none;
+
+    &.m_black {
+        color: $color-black;
+        fill: $color-black;
+    }
+
+    &.m_white {
+        color: $color-white;
+        fill: $color-white;
+    }
+
+    &.m_gray {
+        color: $color-gray-dark;
+        fill: $color-gray-dark;
+    }
+
+    &.m_blue {
+        color: $color-blue;
+        fill: $color-blue;
+    }
+
+    &.m_red {
+        color: $color-red;
+        fill: $color-red;
+    }
+
+    &.m_size_xsmall {
+        font-size: $font-size-xsmall;
+        line-height: $line-height-xsmall;
+    }
+
+    &.m_size_small {
+        font-size: $font-size-small;
+        line-height: $line-height-small;
+    }
+
+    &.m_size_large {
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+    }
+
+    &.m_text_light {
+        font-family: Roboto-light, sans-serif;
+    }
+
+    &.m_bold {
+        font-weight: bold;
+    }
+
+    &.m_underline {
+        text-decoration: underline;
+    }
+
+    &.m_font_medium {
+        font-family: 'Roboto-medium';
+    }
+
+    &.m_font_regular {
+        font-family: 'Roboto-regular';
+    }
+}

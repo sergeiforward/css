@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Аддон до/после контрола       /.sjm_control_addon
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+
+/*------------------------------------------------------------------
+[ Аддон до/после контрола       /.sjm_control_addon ]
+*/
+.sjm_control_addon {
+    @include form-control-focus($color-blue);
+    @include placeholder($color-blue);
+    background-color: transparent;
+    background-image: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: inset $color-gray 0 -1px 0;
+    color: $color-gray-dark;
+    display: inline-block;
+    font-size: $font-size;
+    font-weight: normal;
+    height: 26px;
+    line-height: $line-height;
+    outline: none;
+    padding: 0 0 10px;
+    position: relative;
+    transition: box-shadow ease-in-out .15s;
+    white-space: nowrap;
+    width: auto;
+
+    /* МОДИФИКАТОРЫ */
+
+    /* СОСТОЯНИЕ - Фокус */
+    &.m_focus {
+        box-shadow: inset $color-blue 0 -2px 0;
+    }
+
+    /* ДИСПЛЭЙ - Инлайн */
+    &.m_inline {
+        display: inline-block;
+        float: left;
+    }
+
+    /* ОТСТУПЫ - Паддинги */
+    &.m_left_padding {
+        padding: 0 0 4px 6px;
+    }
+
+    &.m_right_padding {
+        padding: 0 6px 4px 0;
+    }
+
+    /* ГРАНИЦЫ - Без нижней границы */
+    &.m_no_border {
+        box-shadow: none;
+
+        &.m_focus {
+            box-shadow: none;
+        }
+    }
+
+    /* СТАТУС - Ошибка */
+    &.m_error {
+        box-shadow: inset $color-red 0 -1px 0;
+
+        &.m_focus {
+            box-shadow: inset $color-red 0 -2px 0;
+        }
+    }
+}

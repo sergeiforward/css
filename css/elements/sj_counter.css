@@ -1,0 +1,15 @@
+@import 'css/vars.css';
+
+.sj_counter {
+    border-radius: $border-radius;
+    display: inline-block;
+    font-size: $font-size-small;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 4px;
+
+    &.m_orange {
+        background-color: $color-orange;
+        color: $color-white;
+    }
+}

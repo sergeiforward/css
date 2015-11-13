@@ -1,0 +1,133 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+Тут стайлим самое основное,
+что сбросилось нормалайзом, но необходимо нам по дефолту
+
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+@import 'css/fonts.css';
+
+
+* {
+    @include box-sizing(border-box);
+}
+
+html {
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+}
+
+body {
+    @include font($font-size, regular);
+    background-color: $color-background;
+    color: $color-black;
+    line-height: $line-height;
+    min-height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+
+    &.m_menu_open {
+        height: 100%;
+        overflow: hidden;
+
+        .app {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .sjm_layout {
+            height: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .sjm_layout_content_wrapper {
+            height: 100%;
+            max-height: 100%;
+            overflow: hidden;
+            position: relative;
+            z-index: -0;
+        }
+    }
+
+    &.m_modal_open {
+
+        .sjm_layout {
+            height: 100%;
+            max-height: 100%;
+            overflow: hidden;
+        }
+
+        .sjm_layout::after {
+            background-color: rgba(0, 0, 0, .5);
+            content: ' ';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 5;
+        }
+    }
+}
+
+.app {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+a {
+    color: $color-blue;
+    text-decoration: none;
+    transition: opacity ease-in-out .15s;
+
+    &:link,
+    &:visited {
+        color: $color-blue;
+        text-decoration: none;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:active {
+        opacity: .8;
+    }
+
+}
+
+// Убираем выделение при клике в iOS Mobile Safari
+input,
+textarea,
+button,
+select,
+label,
+a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.sjm_rouble {
+    display: inline-block;
+    font-size: 100%;
+    position: relative;
+
+    &::after {
+        color: inherit;
+        content: '=';
+        display: inline-block;
+        font-size: inherit;
+        left: -20%;
+        margin-top: 17%;
+        position: absolute;
+        transform: scale(1.2, .8);
+        z-index: 0;
+    }
+}

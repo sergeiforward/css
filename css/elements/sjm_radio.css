@@ -1,0 +1,142 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Радио
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Радио ]
+*/
+.sjm_radio {
+    appearance: none;
+    display: block;
+    line-height: $form-label-line-height;
+    margin-top: 0;
+    position: relative;
+
+    &.m_right_radio {
+        input[type="radio"] {
+            margin-left: auto;
+            right: 0;
+        }
+
+        label {
+            padding-left: 0;
+            padding-right: 24px;
+        }
+    }
+
+    .m_inline {
+        cursor: pointer;
+        display: inline-block;
+        font-weight: normal;
+        line-height: $form-label-line-height;
+        margin-bottom: 0;
+        padding-left: 24px;
+        position: relative;
+        vertical-align: top;
+
+        &.m_disabled {
+            cursor: not-allowed;
+            opacity: .7;
+        }
+    }
+
+    &.m_inline + &.m_inline {
+        margin-left: 10px; /* Разрежаем последовательные чекбоксы */
+        margin-top: 0;
+    }
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ: Следующие друг за другом */
+    & + & {
+        margin-top: 12px; /* Сдвигаем вверх следующие чекбоксы для аккуратности */
+    }
+
+    .sjm_form_control + & {
+        margin-top: 12px;
+    }
+}
+
+.sjm_radio_label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    line-height: $form-label-line-height;
+    margin-bottom: 0;
+    min-height: $form-label-line-height; /* Чекбокс не будет скакать если пне будет текста */
+    padding-left: 24px;
+    width: 100%;
+}
+
+.sjm_radio_input {
+    appearance: none;
+    background: none;
+    background-color: none;
+    border: 0;
+    cursor: pointer;
+    line-height: normal;
+    margin-left: -24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &::after {
+        background-color: transparent;
+        border: $color-gray-dark solid 2px;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 14px;
+        position: relative;
+        top: 1px;
+        transition: border ease-in-out .15s;
+        width: 14px;
+    }
+
+    &::before {
+        background-color: $color-blue;
+        border-radius: 50%;
+        content: '';
+        display: block;
+        height: 0;
+        left: 9px;
+        position: absolute;
+        top: 10px;
+        transition: width ease-in-out .15s, height ease-in-out .15s, top ease-in-out .15s, left ease-in-out .15s;
+        width: 0;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:checked {
+        &::after {
+            border-color: $color-blue;
+        }
+
+        &::before {
+            height: 10px;
+            left: 4px;
+            top: 5px;
+            width: 10px;
+        }
+
+    }
+
+    &[disabled],
+    &.m_disabled {
+        cursor: not-allowed;
+        opacity: .7;
+
+        label {
+            cursor: not-allowed;
+            opacity: .7;
+        }
+    }
+}

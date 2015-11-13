@@ -1,0 +1,215 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Цвета
+* Оверфлоу
+* Выравнивание текста
+* Жирность текста
+* Размер текста
+* Положение по центру через марджины
+* Размеры блоков в процентах - ширина
+* Обтекание
+* Позиционирование
+
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Цвета ]
+*/
+.h_background_white {
+    background-color: $color-white;
+}
+
+.h_background_red {
+    background-color: $color-red;
+}
+
+/*------------------------------------------------------------------
+[ * Оверфлоу ]
+*/
+.h_overflow_hidden {
+    overflow: hidden;
+}
+
+/*------------------------------------------------------------------
+[ * Выравнивание текста ]
+*/
+.h_text_left {
+    text-align: left;
+}
+
+.h_text_center {
+    text-align: center;
+}
+
+.h_text_right {
+    text-align: right;
+}
+
+/*------------------------------------------------------------------
+[ * Размер текста ]
+*/
+.h_text_small {
+    font-size: 86.6666666%;
+    line-height: normal;
+}
+
+.h_text_large {
+    font-size: 21px;
+    line-height: 28px;
+}
+
+/*------------------------------------------------------------------
+[ * Жирность текста ]
+*/
+.h_text_light {
+    font-family: Roboto-light, sans-serif;
+}
+
+.h_text_medium {
+    font-family: Roboto-medium, sans-serif;
+}
+
+.h_text_regular {
+    font-family: Roboto-regular, sans-serif;
+}
+
+/*------------------------------------------------------------------
+[ * Положение по центру через марджины ]
+*/
+.h_margin_center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*------------------------------------------------------------------
+[ * Размеры блоков в процентах - ширина ]
+*/
+.h_width_per_30 {
+    width: 30%;
+}
+
+.h_width_per_50 {
+    width: 50%;
+}
+
+.h_width_per_90 {
+    width: 90%;
+}
+
+.h_clearfix {
+    @include clearfix;
+}
+
+.h_mobile_max_width {
+    max-width: 600px;
+}
+
+/*------------------------------------------------------------------
+[ * Обтекание ]
+*/
+.h_float_left {
+    float: left;
+}
+
+.h_float_right {
+    float: right;
+}
+
+/*------------------------------------------------------------------
+[ * Флекс-бокс ]
+*/
+.h_flex_box,
+.h_flex_box.h_flex_box {
+    display: flex;
+}
+
+.h_flex_0_0 {
+    flex: 0 0 auto;
+}
+
+.h_flex_0_1 {
+    flex: 0 1 auto;
+}
+
+.h_flex_1_0 {
+    flex: 1 0 auto;
+}
+
+.h_flex_1_1 {
+    flex: 1 1 auto;
+}
+
+.h_flex_0_0_0 {
+    flex: 0 0 0;
+}
+
+.h_flex_0_1_0 {
+    flex: 0 1 0;
+}
+
+.h_flex_1_0_0 {
+    flex: 1 0 0;
+}
+
+.h_flex_1_1_0 {
+    flex: 1 1 0;
+}
+
+/*------------------------------------------------------------------
+[ * Позиционирование ]
+*/
+.h_position_relative {
+    position: relative;
+}
+
+/*------------------------------------------------------------------
+[ * Дисплэй ]
+*/
+.h_display_inline_block {
+    display: inline-block;
+}
+
+.h_display_none {
+    display: none;
+}
+
+.h_display_block {
+    display: block;
+}
+
+/*------------------------------------------------------------------
+[ * Отсутствие марджинов ]
+*/
+.h_margin_none {
+    margin: 0;
+}
+
+.h_margin_bottom_none {
+    margin-bottom: 0;
+}
+
+/*------------------------------------------------------------------
+[ * Прозрачный цвет ]
+*/
+.h_color_transparent {
+    color: transparent;
+}
+
+.h_first_capitalize {
+
+    &:first-letter {
+        text-transform: capitalize;
+        vertical-align: baseline;
+    }
+}
+
+/*------------------------------------------------------------------
+[ * форматирование текста ]
+*/
+.h_white_space {
+    white-space: pre-line;
+}

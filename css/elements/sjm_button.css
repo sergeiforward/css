@@ -1,0 +1,256 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+Кнопки
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ Кнопки ]
+*/
+
+.sjm_button {
+    @include font($font-size, regular);
+    background-color: $color-blue;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $border-radius;
+    color: $color-white;
+    cursor: pointer;
+    display: inline-block;
+    line-height: $line-height;
+    margin-bottom: 0; /* For input.sjm_button */
+    outline: none;
+    padding: 10px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: opacity ease-in-out .15s;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus,
+    &.m_focus {
+        color: $color-white;
+        text-decoration: none;
+    }
+
+    &:active {
+        opacity: 1;
+    }
+
+    &:active,
+    &.m_active {
+        background-image: none;
+        outline: 0;
+    }
+
+    &.m_disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: .65;
+        pointer-events: none;
+    }
+
+    /* МОДИФИКАТОРЫ */
+
+    /* ЦВЕТ - Синий */
+    &.m_blue {
+        background-color: $color-blue;
+        color: $color-white;
+    }
+
+    /* ЦВЕТ - Синий */
+    &.m_green {
+        background-color: $color-green;
+        color: $color-white;
+    }
+
+    /* ЦВЕТ - прозрачно-синий */
+    &.m_transparent_black {
+        background-color: transparent;
+        border: $color-black solid 1px;
+        color: $color-blue;
+        padding: 5.5px 10px;
+
+        &:hover {
+            color: $color-blue;
+        }
+    }
+
+    /* ЦВЕТ - прозрачно-синий */
+    &.m_transparent_blue {
+        background-color: transparent;
+        border: $color-blue solid 1px;
+        color: $color-blue;
+        padding: 5.5px 10px;
+
+        &:hover {
+            color: $color-blue;
+        }
+    }
+
+    /* ЦВЕТ - прозрачно-белый */
+    &.m_transparent_white {
+        background-color: transparent;
+        border: $color-white solid 1px;
+        color: $color-white;
+        padding: 9px 10px;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+
+    /* ЦВЕТ - прозрачно-серый */
+    &.m_transparent_gray {
+        background-color: transparent;
+        border: $color-gray solid 1px;
+        color: $color-black;
+        padding: 9px 10px;
+
+        &:hover {
+            color: $color-gray-dark;
+        }
+
+        &.m_group.m_active {
+            background-color: $color-blue;
+            color: $color-white;
+        }
+    }
+
+    /* ЦВЕТ - прозрачно-темно-серый */
+    &.m_transparent_gray_dark {
+        background-color: transparent;
+        border: $color-gray-dark solid 1px;
+        color: $color-black;
+        padding: 9px 10px;
+
+        &:hover {
+            color: $color-gray-dark;
+        }
+
+        &.m_group.m_active {
+            background-color: $color-blue;
+            color: $color-white;
+        }
+    }
+
+    /* РАЗМЕР - во всю ширину родителя */
+    &.m_stretch {
+        display: block;
+        width: 100%;
+
+        &.m_transparent_gray,
+        &.m_transparent_blue {
+            padding: 9px 10px;
+        }
+    }
+
+    /* РАЗМЕР - большой */
+    &.m_large {
+        @include font(18px, regular);
+        line-height: 24px;
+        padding: 9px 10px;
+    }
+
+    /* Текст - строчными */
+    &.m_uppercase {
+        text-transform: uppercase;
+    }
+
+    /* ТИП - специальный */
+    &.m_group {
+        border-radius: 0;
+        margin-left: -1px;
+        padding: 9px;
+
+        &:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+            margin-left: 0;
+        }
+
+        &:last-child {
+            border-radius: 0 $border-radius $border-radius 0;
+        }
+
+        &:focus {
+            color: $color-gray-dark;
+            opacity: 1;
+        }
+
+        /* МОДИФИКАТОРЫ */
+
+        /* СОСТОЯНИЕ - Активная */
+        &.m_active {
+            border-color: $color-blue;
+            box-shadow: none;
+            color: $color-blue;
+            z-index: 1;
+        }
+    }
+
+
+    &.m_special {
+        background-color: transparent;
+        border: $color-gray-dark solid 1px;
+        border-radius: 0;
+        color: $color-gray-dark;
+        font-size: 18px;
+        line-height: 22px;
+        margin-left: -1px;
+        padding: 7px 0;
+        position: relative;
+        text-transform: uppercase;
+
+        &:first-child {
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+            margin-left: 0;
+        }
+
+        &:last-child {
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+        }
+
+        &:focus {
+            color: $color-gray-dark;
+            opacity: 1;
+        }
+
+        /* МОДИФИКАТОРЫ */
+
+        /* СОСТОЯНИЕ - Активная */
+        &.m_active {
+            border-color: $color-blue;
+            box-shadow: none;
+            color: $color-blue;
+            z-index: 1;
+        }
+
+        /* ТИП - Нормальная */
+        &.m_normal {
+            text-transform: none;
+        }
+    }
+
+    &.m_fixed_bottom {
+        border-radius: 0;
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        z-index: 100;
+    }
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ: Следуюет сраз после .sjm_form_control_set */
+    .sjm_form_control_set + & {
+        margin-top: 12px;
+    }
+}

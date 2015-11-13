@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Основное /.sj_panel
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[1. Основное /.sj_panel]
+*/
+.sjm_panel {
+    @include clearfix;
+    background-color: $color-white;
+    border-radius: $border-radius;
+    display: block;
+    padding: 12px;
+    width: 100%;
+
+    /* Модификаторы */
+
+    /* Прозрачная и без паддингов */
+    &.m_blank {
+        background-color: transparent;
+        padding: 0;
+    }
+
+    .m_without_border_radius {
+        border-radius: 0;
+    }
+
+    & + & {
+        margin: 12px 0 0;
+    }
+
+    &.m_ghost {
+        background-color: transparent;
+        border: $color-gray dashed 1px;
+    }
+
+    &.m_yellow_light {
+        background-color: $color-yellow-light;
+    }
+}
+
+a.sjm_panel {
+    color: $color-black;
+    text-decoration: none;
+}

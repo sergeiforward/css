@@ -1,0 +1,40 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Группы кнопок             /.sjm_btn_group
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Группы кнопок ]
+*/
+.sjm_btn_group {
+
+    @include clearfix;
+
+    .sjm_button,
+    .sjm_button.sjm_button {
+        border-radius: 0;
+        float: left;
+
+        &:last-child {
+            border-bottom-right-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+        }
+
+        &:first-child {
+            border-bottom-left-radius: $border-radius;
+            border-top-left-radius: $border-radius;
+        }
+    }
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ: Группа находится в оболочке */
+    .sjm_form_control_wr & {
+        margin-top: -9px;
+    }
+
+}
+

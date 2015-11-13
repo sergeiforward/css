@@ -1,0 +1,102 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Загрузчики
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Загрузчики ]
+*/
+.sjm_loader {
+    background: $color-blue;
+    height: 4px;
+    left: 0;
+    margin: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.sjm_loader_bar {
+    animation: load .7s 0s infinite linear;
+    background: $color-white;
+    bottom: 0;
+    left: 0%;
+    position: absolute;
+    top: 0;
+    width: 50%;
+}
+
+@keyframes load {
+    0% {
+        left: -50%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.sjm_dot_loader {
+    display: inline-block;
+    height: 9px;
+    margin-top: 6px;
+    vertical-align: top;
+
+    div {
+        animation: bubble 1100ms forwards infinite;
+        border-radius: 50%;
+        display: inline-block;
+        height: 8px;
+        margin: 0 4px;
+        opacity: 1;
+        vertical-align: top;
+        width: 8px;
+
+        &:nth-child(2) {
+            animation-delay: 125ms;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 250ms;
+        }
+    }
+
+    &.m_blue {
+        div {
+            background: $color-white;
+        }
+    }
+
+    &.m_transparent_blue {
+        div {
+            background: $color-blue;
+        }
+    }
+
+    &.m_gray {
+        div {
+            background: $color-gray-dark;
+            box-shadow: none;
+        }
+    }
+}
+
+@keyframes bubble {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

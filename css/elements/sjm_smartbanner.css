@@ -1,0 +1,47 @@
+@import 'css/vars.css';
+
+.sjm_smartbanner {
+    background: $color-background;
+    display: block;
+    height: 65px;
+    line-height: 1;
+    padding: 5px 70px 0 77px;
+    position: relative;
+    width: 100%;
+}
+
+.sjm_smartbanner_icon {
+    height: 48px;
+    left: 22px;
+    position: absolute;
+    top: 9px;
+    width: 48px;
+}
+
+.sjm_smartbanner_title {
+    display: block;
+    white-space: pre-line;
+}
+
+.sjm_smartbanner_desc {
+    display: block;
+}
+
+.sjm_smartbanner_link {
+    position: absolute;
+    right: 12px;
+    top: 25px;
+}
+
+.sjm_smartbanner_close {
+    background: 0;
+    border: 0;
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 22px;
+}

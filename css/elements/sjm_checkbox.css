@@ -1,0 +1,138 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+* Чекбоксы
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ * Чекбоксы ]
+*/
+
+.sjm_checkbox {
+    display: block;
+    line-height: $form-label-line-height;
+    margin-top: 0;
+    position: relative;
+
+    /* МОДИФИКАТОРЫ */
+
+    /* ПОЛОЖЕНИЕ - Справа */
+    &.m_right_checkbox .sjm_checkbox_label {
+        padding: 0 24px 0 0;
+    }
+
+    /* ДИСПЛЭЙ - Инлайн */
+    &.m_inline {
+        cursor: pointer;
+        display: inline-block;
+        font-weight: normal;
+        line-height: $form-label-line-height;
+        margin-bottom: 0;
+        position: relative;
+        vertical-align: top;
+    }
+
+    &.m_inline + &.m_inline {
+        margin-left: 10px; /* Разрежаем последовательные чекбоксы */
+        margin-top: 0;
+    }
+
+    &.m_right_checkbox {
+        input[type="checkbox"] {
+            margin-left: auto;
+            right: 0;
+        }
+    }
+
+    &.m_disabled {
+        label {
+            cursor: not-allowed;
+            opacity: .7;
+        }
+    }
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ:  Сдвигаем вверх следующие чекбоксы для аккуратности */
+    & + & {
+        margin-top: 12px;
+    }
+
+    /* УСЛОВИЕ:  Сдвигаем вверх следующие ПОСЛЕ чекбоксы для аккуратности */
+    .sjm_form_control + .sjm_checkbox,
+    .sjm_form_control_set + .sjm_checkbox,
+    .sjm_form_control_group + .sjm_checkbox {
+        margin-top: 12px;
+    }
+}
+
+.sjm_checkbox_input {
+    -webkit-appearance: none;
+    border: 0;
+    height: 18px;
+    line-height: $form-label-line-height;
+    margin-left: -24px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+
+    &::after {
+        background: inline($checkbox-ok-svg) center center no-repeat;
+        background-color: $color-blue;
+        background-size: 70% 70%;
+        border: 0;
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 18px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity ease-in-out .15s;
+        width: 18px;
+    }
+
+    &::before {
+        background-color: transparent;
+        border: $color-gray-dark solid 2px;
+        border-radius: 3px;
+        content: '';
+        display: block;
+        height: 14px;
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        transition: opacity ease-in-out .15s;
+        width: 14px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:checked {
+        &::after {
+            opacity: 1;
+        }
+
+        &::before {
+            opacity: 0;
+        }
+    }
+}
+
+.sjm_checkbox_label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    line-height: $form-label-line-height;
+    margin-bottom: 0;
+    min-height: $form-label-line-height; /* Чекбокс не будет скакать если пне будет текста */
+    padding: 0 0 0 24px;
+    width: 100%;
+    word-wrap: break-word;
+}

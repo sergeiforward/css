@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+** Пагинация
+
+* Пагинатор                                     /.sjm_paginator
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+
+
+/*------------------------------------------------------------------
+[ * Пагинатор                                   /.sjm_paginator ]
+*/
+.sjm_paginator {
+    text-align: center;
+}
+
+.sjm_paginator_item {
+    padding: 0 3px;
+}
+
+.sjm_paginator_link,
+a.sjm_paginator_link {
+    border: $color-gray solid 1px;
+    border-radius: 3px;
+    color: $color-black;
+    display: inline-block;
+    font-size: $font-size;
+    height: 35px;
+    line-height: 35px;
+    min-width: 35px;
+    text-align: center;
+    transition: transform .15 ease-in-out;
+
+    &.m_active {
+        background-color: $color-blue;
+        border: $color-blue solid 1px;
+        color: $color-white;
+    }
+
+    &:active {
+        border: $color-blue solid 1px;
+    }
+
+    i {
+        transform: translate3d(0, -1px, 0);
+    }
+}

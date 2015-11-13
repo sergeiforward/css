@@ -1,0 +1,165 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+Кнопки
+
+-------------------------------------------------------------------*/
+@import 'css/vars.css';
+@import 'css/mixins.css';
+
+/*------------------------------------------------------------------
+[ Кнопки ]
+*/
+
+/* ДЕБАГ - Если нет модификатора типа */
+.sjm_social_btn {
+    background-color: $color-red;
+
+    &::after {
+        @include font(10px, light);
+        content: 'Добавь модификатор типа';
+        display: block;
+        line-height: 14px;
+        padding-top: 5px;
+        text-align: center;
+    }
+}
+
+.sjm_social_btn,
+.sjm_social_btn.sjm_social_btn {
+    @include font($font-size, regular);
+    background-image: none;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0;
+    border-radius: $border-radius;
+    color: $color-blue;
+    cursor: pointer;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 0; /* For input.sjm_social_btn */
+    opacity: 1;
+    outline: none;
+    padding: 0;
+    text-align: center;
+    touch-action: manipulation;
+    transform: scale(1);
+    transition: opacity ease-in-out .15s, transform ease-in-out .15s;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 36px;
+
+    &:hover,
+    &:focus,
+    &.m_focus {
+        color: $color-blue;
+        text-decoration: none;
+    }
+
+    &:active {
+        opacity: 1;
+        transform: scale(.8);
+    }
+
+    &:active,
+    &.m_active {
+        background-image: none;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+        outline: 0;
+    }
+
+    &.m_disabled,
+    &[disabled],
+    fieldset[disabled] & {
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: .65;
+        pointer-events: none;
+    }
+
+    /* МОДИФИКАТОРЫ */
+
+    /* ТИП - Фэйсбук */
+    &.m_facebook {
+        background-color: $color-facebook;
+        background-image: inline($social-btn-facebook-bg-svg);
+
+        .lt-ie9 & {
+            background-image: inline($social-btn-facebook-bg-png);
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    /* ТИП - Вконтакте */
+    &.m_vkontakte {
+        background-color: $color-vkontakte;
+        background-image: inline($social-btn-vkontakte-bg-svg);
+
+        .lt-ie9 & {
+            background-image: inline($social-btn-vkontakte-bg-png);
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    /* ТИП - Майлру */
+    &.m_mailru {
+        background-color: $color-mailru;
+        background-image: inline($social-btn-mailru-bg-svg);
+
+        .lt-ie9 & {
+            background-image: inline($social-btn-mailru-bg-png);
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    /* ТИП - Линкедин */
+    &.m_linkedin {
+        background-color: $color-linkedin;
+        background-image: inline($social-btn-linkedin-bg-svg);
+
+        .lt-ie9 & {
+            background-image: inline($social-btn-linkedin-bg-png);
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    /* РАЗМЕР - Малый */
+    &.m_small {
+        height: 24px;
+        width: 24px;
+    }
+
+    /* РАЗМЕР - Средний */
+    &.m_medium {
+        height: 36px;
+        width: 36px;
+    }
+
+    /* РАЗМЕР - Большой */
+    &.m_large {
+        height: 48px;
+        width: 48px;
+    }
+
+    /* УСЛОВИЯ */
+
+    /* УСЛОВИЕ: Находятся в .sjm_socials */
+    .sjm_socials & {
+        margin: 0 3px;
+    }
+
+}
